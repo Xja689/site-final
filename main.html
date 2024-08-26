@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accès sécurisé</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="password"] {
+            padding: 10px;
+            width: 200px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Accès sécurisé</h2>
+        <p>Veuillez entrer le mot de passe pour continuer :</p>
+        <input type="password" id="password" placeholder="Mot de passe">
+        <br>
+        <button onclick="checkPassword()">Valider</button>
+        <p id="errorMessage" class="error"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const correctPassword = 'lepyjamanoir'; // Définissez ici votre mot de passe
+
+            if (password === correctPassword) {
+                window.location.href = 'success.html'; // Redirection vers la page suivante
+            } else {
+                document.getElementById('errorMessage').textContent = 'Mot de passe incorrect. Veuillez réessayer.';
+            }
+        }
+    </script>
+</body>
+</html>
